@@ -5,7 +5,7 @@ $(document).ready(function () {
     // A function to create the celebrity buttons
     function createButtons() {
         $("#buttons-spot").empty();
-        
+
 
         for (let i = 0; i < topics.length; i++) {
 
@@ -20,14 +20,27 @@ $(document).ready(function () {
             $("#buttons-spot").append(btns);
         }
     }
+    // Pushes the player typed into the textarea to the array and makes a button.
+    $("#ath-add").on("click", function (event) {
+        event.preventDefault();
+
+        let athName = $("#name-input").val().trim();
+
+        topics.push(athName);
+
+        createButtons();
+
+    })
 
 
     createButtons();
 
-    $("button").on("click", function () {
+    // Retrieves the API data from Giphy.
+
+     function getGif() {
         let player = $(this).attr("data-name");
         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            player + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+            player + "&api_key=oF3l3xuw1hG8JwWxkayloYDLTn0XsBRJ&limit=10";
 
         $.ajax({
             url: queryURL,
@@ -43,7 +56,7 @@ $(document).ready(function () {
 
                     let p = $("<p>").text("Rating: " + rating);
 
-
+                    // Set attributes for the still and animate options.
                     let animated = results[i].images.fixed_height.url;
                     let still = results[i].images.fixed_height_still.url;
 
@@ -55,7 +68,7 @@ $(document).ready(function () {
                     playerImage.addClass("player-image");
 
 
-
+                    // Add the data retrieved from Giphy to the HTML.
                     gifyDiv.prepend(p);
                     gifyDiv.prepend(playerImage);
 
@@ -64,7 +77,9 @@ $(document).ready(function () {
                 }
 
             });
-    })
+    }
+
+    // Function that allows you to click on a gif to animate it or pause it.
     $(document).on("click", ".player-image", function () {
         let state = $(this).attr("data-state");
 
@@ -78,15 +93,7 @@ $(document).ready(function () {
         }
 
     })
-    $("#ath-add").on("click", function (event) {
-        event.preventDefault();
+    createButtons();
+    $(document).on("click", ".ath", getGif)
 
-        let athName = $("#name-input").val().trim();
-
-        topics.push(athName);
-
-        createButtons();
-        
-    })
-    
 })
