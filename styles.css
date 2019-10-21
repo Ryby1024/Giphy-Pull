@@ -1,0 +1,50 @@
+body    {
+    background: #2f4454;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+.container  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.ath    {
+    margin: 10px;
+    padding: 10px;
+    width: auto;
+    background: #da7b93;
+    color: black;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.jumbotron  {
+    background: #1c3334;
+    text-align: center;
+
+}
+#giphy-form   {
+    border: 2px solid black;
+    height: auto;
+    background: #2e151b;
+    align-content: center;
+    padding: 10px;
+    
+    
+}
+#ath-add    {
+    background:#da7b93;
+    color: black;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h1{
+    font-size: 75px;
+    color: white;
+}
+label{
+    color: #376e6f;
+}

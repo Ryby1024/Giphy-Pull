@@ -5,13 +5,13 @@ $(document).ready(function () {
     // A function to create the celebrity buttons
     function createButtons() {
         $("#buttons-spot").empty();
-
+        
 
         for (let i = 0; i < topics.length; i++) {
 
             let btns = $("<button>");
 
-            btns.addClass("game");
+            btns.addClass("ath");
 
             btns.attr("data-name", topics[i]);
 
@@ -20,6 +20,7 @@ $(document).ready(function () {
             $("#buttons-spot").append(btns);
         }
     }
+
 
     createButtons();
 
@@ -75,6 +76,7 @@ $(document).ready(function () {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
+
     })
     $("#ath-add").on("click", function (event) {
         event.preventDefault();
@@ -84,5 +86,7 @@ $(document).ready(function () {
         topics.push(athName);
 
         createButtons();
+        
     })
+    
 })

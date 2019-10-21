@@ -8,27 +8,39 @@
     <title>Giphy Pull</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="jumbotron">
         <h1>Giphy Pull Up</h1>
     </div>
-    <div id="buttons-spot"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="buttons-spot"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container text">
+        <div class="row">
+            <div class="col-sm-12">
+                <form id="giphy-form">
+                    <label for="name-input">Add an Athlete</label><br>
+                    <input type="text" id="name-input" placeholder="Player Name"><br>
 
-    <form id="giphy-form">
-        <label for="name-input">Add an Athlete</label>
-        <input type="text" id="name-input"><br>
 
 
-
-        <input id="ath-add" type="submit" value="Add an Athlete">
-    </form>
-
-    <div id="gifs-appear-here"></div>
-
+                    <input id="ath-add" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="gifs-appear-here"></div>
+    </div>
 
 
     <script src="javascript.js"></script>
