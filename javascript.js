@@ -24,20 +24,27 @@ $(document).ready(function () {
     $("#ath-add").on("click", function (event) {
         event.preventDefault();
 
-        let athName = $("#name-input").val().trim();
-
-        topics.push(athName);
+        var athName = $("#name-input").val().trim();
         
-        createButtons();
-
+        topics.push(athName);
+      
+        noEntry();
         
         $("#giphy-form input[type='text']").val("");
 
     })
+    function noEntry(){
+        var athName = $("#name-input").val().trim();
+        if(athName === ""){
+            confirm("Must enter a name");
+           $(athName).empty();
+        return false;
+        } else{
+            createButtons();
+        }
+    }
    
     
-
-    createButtons();
 
     // Retrieves the API data from Giphy.
 
