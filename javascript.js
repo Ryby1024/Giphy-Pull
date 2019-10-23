@@ -27,11 +27,15 @@ $(document).ready(function () {
         let athName = $("#name-input").val().trim();
 
         topics.push(athName);
-
+        
         createButtons();
 
-    })
+        
+        $("#giphy-form input[type='text']").val("");
 
+    })
+   
+    
 
     createButtons();
 

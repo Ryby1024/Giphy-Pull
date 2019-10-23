@@ -1,7 +1,11 @@
 body    {
-    background: #2f4454;
+    background-image: url("images/background.jpg");
     font-size: 25px;
     font-weight: 500;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 .container  {
@@ -15,23 +19,23 @@ body    {
     margin: 10px;
     padding: 10px;
     width: auto;
-    background: #da7b93;
+    background: yellowgreen;
     color: black;
     font-weight: 500;
     border-radius: 10px;
 }
 .jumbotron  {
-    background: #1c3334;
+    background-image: url("images/banner.jpg");
     text-align: center;
 
 }
 #giphy-form   {
     border: 2px solid black;
     height: auto;
-    background: #2e151b;
+    background: rgb(223, 216, 216);
     align-content: center;
     padding: 10px;
-    
+      
     
 }
 #ath-add    {
@@ -43,7 +47,12 @@ body    {
 }
 h1{
     font-size: 75px;
-    color: white;
+    color: yellow;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 label{
     color: #376e6f;
