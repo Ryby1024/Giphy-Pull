@@ -32,7 +32,7 @@ body    {
 #giphy-form   {
     border: 2px solid black;
     height: auto;
-    background: rgb(223, 216, 216);
+    background: silver;
     align-content: center;
     padding: 10px;
       
@@ -56,4 +56,9 @@ h1{
 }
 label{
     color: #376e6f;
+}
+p   {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -25,30 +25,31 @@ $(document).ready(function () {
         event.preventDefault();
 
         var athName = $("#name-input").val().trim();
-        
+
         topics.push(athName);
-      
+
         noEntry();
-        
+
         $("#giphy-form input[type='text']").val("");
 
     })
-    function noEntry(){
+    // Funtion to alert the user if they try to create a button without entering in a name.
+    function noEntry() {
         var athName = $("#name-input").val().trim();
-        if(athName === ""){
+        if (athName === "") {
             confirm("Must enter a name");
-           $(athName).empty();
-        return false;
-        } else{
+            $(athName).empty();
+            return false;
+        } else {
             createButtons();
         }
     }
-   
-    
+
+
 
     // Retrieves the API data from Giphy.
 
-     function getGif() {
+    function getGif() {
         let player = $(this).attr("data-name");
         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             player + "&api_key=oF3l3xuw1hG8JwWxkayloYDLTn0XsBRJ&limit=10";
@@ -64,6 +65,8 @@ $(document).ready(function () {
 
                     let gifyDiv = $("<div>");
                     let rating = results[i].rating;
+                    let title = results[i].title;
+                    let t = $("<p>").text("Title: " + title);
 
                     let p = $("<p>").text("Rating: " + rating);
 
@@ -81,6 +84,7 @@ $(document).ready(function () {
 
                     // Add the data retrieved from Giphy to the HTML.
                     gifyDiv.prepend(p);
+                    gifyDiv.prepend(t);
                     gifyDiv.prepend(playerImage);
 
                     $("#gifs-appear-here").prepend(gifyDiv);
