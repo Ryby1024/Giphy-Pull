@@ -25,25 +25,23 @@ $(document).ready(function () {
         event.preventDefault();
 
         var athName = $("#name-input").val().trim();
+        if (athName == "") {
+            confirm("Must enter a name");
+            $(athName).empty();
+            
+        } else {
+            topics.push(athName);
 
-        topics.push(athName);
-
-        noEntry();
+            createButtons();
+        }
+        
+        
+        
 
         $("#giphy-form input[type='text']").val("");
 
     })
-    // Funtion to alert the user if they try to create a button without entering in a name.
-    function noEntry() {
-        var athName = $("#name-input").val().trim();
-        if (athName === "") {
-            confirm("Must enter a name");
-            $(athName).empty();
-            return false;
-        } else {
-            createButtons();
-        }
-    }
+    
 
 
 
@@ -53,7 +51,7 @@ $(document).ready(function () {
         let player = $(this).attr("data-name");
         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             player + "&api_key=oF3l3xuw1hG8JwWxkayloYDLTn0XsBRJ&limit=10";
-
+        $("#gifs-appear-here").empty();
         $.ajax({
             url: queryURL,
             method: "GET"
